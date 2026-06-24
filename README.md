@@ -30,9 +30,9 @@ src/university/
 У PowerShell із кореневої папки проєкту:
 
 ```powershell
-chcp 65001 | Out-Null
+chcp 1251 | Out-Null
 New-Item -ItemType Directory -Force out | Out-Null
 $files = (Get-ChildItem -Recurse -LiteralPath src -Filter *.java).FullName
 javac -encoding UTF-8 -d out $files
-java "-Dfile.encoding=UTF-8" "-Dstdout.encoding=UTF-8" "-Dstderr.encoding=UTF-8" -cp out university.Main
+java -cp out university.Main
 ```
